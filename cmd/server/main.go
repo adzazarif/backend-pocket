@@ -7,6 +7,9 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"pocket-app/internal/config"
 	"pocket-app/internal/database"
+	"pocket-app/internal/domain/auth"
+	"pocket-app/internal/domain/dashboard"
+	"pocket-app/internal/domain/pocket"
 	"pocket-app/internal/middleware"
 	"pocket-app/internal/router"
 )
@@ -35,10 +38,20 @@ func main() {
 	app.Use(cors.New())
 
 	// 5. Setup dependencies
-	// TODO: Initialize repositories, services, and handlers
+	userRepo := auth.NewUserRepository(db)
+	pocketRepo := pocket.NewPocketRepository(db)
+	dashRepo := dashboard.NewDashboardRepository(db)
+
+	authSvc := auth.NewAuthService(userRepo, cfg)
+	pocketSvc := pocket.NewPocketService(pocketRepo)
+	dashSvc := dashboard.NewDashboardService(dashRepo, pocketRepo)
+
+	authHandler := auth.NewAuthHandler(authSvc)
+	pocketHandler := pocket.NewPocketHandler(pocketSvc)
+	dashHandler := dashboard.NewDashboardHandler(dashSvc)
 
 	// 6. Setup router
-	router.Setup(app, cfg.JWTSecret)
+	router.Setup(app, cfg.JWTSecret, authHandler, dashHandler, pocketHandler)
 
 	// 7. Start server
 	log.Printf("Server is starting on port %s", cfg.AppPort)

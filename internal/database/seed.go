@@ -3,11 +3,12 @@ package database
 import (
 	"log"
 
+	"pocket-app/internal/config"
+	"pocket-app/internal/model"
+
 	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	"pocket-app/internal/config"
-	"pocket-app/internal/model"
 )
 
 func Seed(db *gorm.DB, cfg *config.Config) error {
