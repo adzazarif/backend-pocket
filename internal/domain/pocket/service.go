@@ -116,7 +116,7 @@ func (s *pocketService) Archive(ctx context.Context, id, userID string) (*Pocket
 		return nil, apperror.Internal("Failed to archive pocket item")
 	}
 
-	return &PocketResponse{ID: item.ID}, nil
+	return toPocketResponse(item), nil
 }
 
 func (s *pocketService) UpdateStatus(ctx context.Context, id, userID string, req UpdateStatusRequest) (*PocketResponse, error) {

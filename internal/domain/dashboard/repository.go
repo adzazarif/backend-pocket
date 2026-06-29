@@ -28,7 +28,7 @@ func (r *dashboardRepository) GetSummary(ctx context.Context, userID string) (*D
 			COUNT(CASE WHEN status = 'archived' THEN 1 END) AS archived_items,
 			COUNT(CASE WHEN is_favorite = 1 THEN 1 END) AS favorite_items
 		FROM pocket_items
-		WHERE user_id = ?;
+		WHERE user_id = ?
 	`
 
 	var summary struct {

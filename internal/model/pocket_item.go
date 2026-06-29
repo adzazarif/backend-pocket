@@ -23,11 +23,16 @@ func (s *StringArray) Scan(value interface{}) error {
         *s = StringArray{}
         return nil
     }
-    bytes, ok := value.([]byte)
-    if !ok {
+    var b []byte
+    switch v := value.(type) {
+    case []byte:
+        b = v
+    case string:
+        b = []byte(v)
+    default:
         return fmt.Errorf("cannot scan type %T into StringArray", value)
     }
-    return json.Unmarshal(bytes, s)
+    return json.Unmarshal(b, s)
 }
 
 type PocketItem struct {
@@ -36,8 +41,8 @@ type PocketItem struct {
     Title       string      `gorm:"type:varchar(120);not null"`
     URL         *string     `gorm:"type:varchar(2048)"`
     Description *string     `gorm:"type:text"`
-    ContentType string      `gorm:"type:enum('article','video','document','note');not null;default:'article'"`
-    Status      string      `gorm:"type:enum('unread','reading','read','archived');not null;default:'unread'"`
+    ContentType string      `gorm:"type:varchar(20);not null;default:'article'"`
+    Status      string      `gorm:"type:varchar(20);not null;default:'unread'"`
     IsFavorite  bool        `gorm:"type:tinyint(1);not null;default:0"`
     Tags        StringArray `gorm:"type:json"`
     CreatedAt   time.Time   `gorm:"precision:3;autoCreateTime"`
