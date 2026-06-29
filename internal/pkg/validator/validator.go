@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/go-playground/validator/v10"
 	"pocket-app/internal/pkg/apperror"
+
+	"github.com/go-playground/validator/v10"
 )
 
 var validate = validator.New()
@@ -44,6 +45,8 @@ func Validate(s interface{}) []apperror.FieldError {
 			message = fmt.Sprintf("%s must not exceed %s characters", err.Field(), err.Param())
 		case "oneof":
 			message = fmt.Sprintf("%s must be one of [%s]", err.Field(), err.Param())
+		case "unique":
+			message = "Tags tidak boleh sama"
 		case "valid_url":
 			message = "URL is invalid"
 		default:
@@ -51,7 +54,7 @@ func Validate(s interface{}) []apperror.FieldError {
 		}
 
 		errors = append(errors, apperror.FieldError{
-			Field:   err.Field(), 
+			Field:   err.Field(),
 			Message: message,
 		})
 	}

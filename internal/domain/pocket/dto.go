@@ -7,7 +7,7 @@ type CreatePocketRequest struct {
 	URL         *string  `json:"url"`
 	Description *string  `json:"description" validate:"omitempty,max=500"`
 	ContentType string   `json:"contentType" validate:"required,oneof=article video document note"`
-	Tags        []string `json:"tags" validate:"omitempty,max=10,dive,max=24"`
+	Tags        []string `json:"tags" validate:"omitempty,unique,max=10,dive,max=24"`
 }
 
 type UpdatePocketRequest struct {
@@ -15,7 +15,7 @@ type UpdatePocketRequest struct {
 	URL         *string  `json:"url"`
 	Description *string  `json:"description" validate:"omitempty,max=500"`
 	ContentType string   `json:"contentType" validate:"required,oneof=article video document note"`
-	Tags        []string `json:"tags" validate:"omitempty,max=10,dive,max=24"`
+	Tags        []string `json:"tags" validate:"omitempty,max=10,unique,dive,max=24"`
 }
 
 type UpdateStatusRequest struct {
