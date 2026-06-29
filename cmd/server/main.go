@@ -17,7 +17,14 @@ func main() {
 
 	// 2. Connect to database
 	db := database.Connect(cfg)
-	_ = db // To avoid unused variable error until repositories are implemented
+	
+	if err := database.Migrate(db); err != nil {
+		log.Fatalf("Migration failed: %v", err)
+	}
+	
+	if err := database.Seed(db, cfg); err != nil {
+		log.Fatalf("Seeding failed: %v", err)
+	}
 
 	// 3. Initialize Fiber app
 	app := fiber.New(fiber.Config{
