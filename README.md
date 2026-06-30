@@ -108,7 +108,7 @@ Berikut adalah snapshot dokumentasi eksekusi dari skenario pengujian manual/otom
 - [Postman Environment](docs/api-collection/Backend-pocket.postman_environment.json)
 
 ## Link Recording Proses Pengerjaan
-[Video Recording Proses Pengerjaan](https://drive.google.com/file/d/1Iqbf6kNlyaohzEnMoN5hKZ2H_z97YpdR/view?usp=drive_link)
+[Video Recording Proses Pengerjaan](https://drive.google.com/drive/folders/1FXOLiKGlkVho4tq4rRUjHHCCnxVmI-au?usp=drive_link)
 
 ## Tools AI yang Digunakan
 - **Antigravity IDE (Gemini-powered)**: Digunakan sebagai pair-programmer AI agent untuk mendesain arsitektur, implementasi domain (auth, pocket, dashboard), refactoring, menulis unit test, mengatur best practices (repository pattern), dan membuat dokumentasi proyek.
