@@ -15,7 +15,7 @@ A robust backend REST API for a Pocket-like application, built with Go and Fiber
 ## Cara Menjalankan Project
 
 1. Pastikan Anda telah menginstal Go (minimal versi 1.20+).
-2. Clone repositori ini dan masuk ke direktori project.
+2. Clone repositori ini kemudian masuk ke direktori project lalu masuk ke directory src.
 3. Instal semua dependensi:
    ```bash
    go mod tidy
@@ -98,7 +98,7 @@ Berikut adalah snapshot dokumentasi eksekusi dari skenario pengujian manual/otom
 
 ## Link ke Dokumen Penting
 - [Analisis PRD](docs/01-prd-analysis.md)
-- [API Design](docs/02-api-design.md)
+- [Technical Plan](docs/02-technical-plan.md)
 - [Database Design](docs/03-database-design.md)
 - [Payload Contract](docs/04-payload-contract.md)
 - [Mock API](docs/05-mock-api.md)
