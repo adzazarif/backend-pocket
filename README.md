@@ -68,6 +68,16 @@ go test ./... -v
 ```
 *(Catatan: Beberapa tes integrasi mungkin menggunakan SQLite in-memory atau memerlukan konfigurasi database test terpisah tergantung pada environment).*
 
+## Hasil Testing (Dokumentasi Visual)
+
+Berikut adalah snapshot dokumentasi eksekusi dari skenario pengujian manual/otomatis menggunakan Test Golang dan Postman API.
+
+![List Testing Postman](docs/img/list-testing.png)
+
+![Hasil Runner Semua](docs/img/hasil-semua.png)
+
+![Hasil Testing Go](docs/img/hasil-testing.png)
+
 ## Daftar Endpoint Utama
 
 ### Authentication (Public)
