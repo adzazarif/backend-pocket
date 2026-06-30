@@ -97,15 +97,18 @@ Berikut adalah snapshot dokumentasi eksekusi dari skenario pengujian manual/otom
 - `POST /api/auth/logout` - Logout user.
 
 ## Link ke Dokumen Penting
-- [PRD Utama (Product Requirements Document)](docs/PRD_Software_Aplikasi_Pocket.md)
 - [Analisis PRD](docs/01-prd-analysis.md)
 - [API Design](docs/02-api-design.md)
 - [Database Design](docs/03-database-design.md)
 - [Payload Contract](docs/04-payload-contract.md)
-- [Rules & Guidelines](docs/rule.md)
+- [Mock API](docs/05-mock-api.md)
+- [Testing Report](docs/06-testing-report.md)
+- [Delivery Report](docs/07-delivery-report.md)
+- [Postman Collection](docs/api-collection/Pocket%20Api.postman_collection.json)
+- [Postman Environment](docs/api-collection/Backend-pocket.postman_environment.json)
 
 ## Link Recording Proses Pengerjaan
-[Masukkan link video recording di sini / Attach in submission]
+[Video Recording Proses Pengerjaan](https://drive.google.com/file/d/1Iqbf6kNlyaohzEnMoN5hKZ2H_z97YpdR/view?usp=drive_link)
 
 ## Tools AI yang Digunakan
 - **Antigravity IDE (Gemini-powered)**: Digunakan sebagai pair-programmer AI agent untuk mendesain arsitektur, implementasi domain (auth, pocket, dashboard), refactoring, menulis unit test, mengatur best practices (repository pattern), dan membuat dokumentasi proyek.

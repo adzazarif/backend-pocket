@@ -46,7 +46,7 @@ Selama proyek, AI (Antigravity IDE / Gemini Pro) digunakan sebagai *Co-Pilot / P
 5. **Debugging & Refactoring Code**: AI mengeksekusi proses refactor untuk pemisahan *Business Logic* dari controller ke usecase, menyelesaikan problem duplicate payload error, serta migrasi.
 ## 7. Link Recording Proses Pengerjaan
 *(Silakan isi atau ganti link berikut dengan tautan video presentasi/recording hasil pengerjaan Anda)*
-[**Masukkan Link Recording Di Sini**]
+[**Video Recording Proses Pengerjaan**](https://drive.google.com/file/d/1Iqbf6kNlyaohzEnMoN5hKZ2H_z97YpdR/view?usp=drive_link)
 ## 8. Improvement Plan (Rencana Pengembangan)
 - **Implementasi Caching**: Mengintegrasikan **Redis** pada endpoint `/api/dashboard` dan `/api/pockets`. Dashboard memerlukan *heavy computation* ketika jumlah row database menjadi sangat besar, sehingga agregat metric (seperti per-tag info) sebaiknya dicache.
 - **Message Broker & Background Worker (RabbitMQ / Kafka)**: Jika kedepannya kita ingin mengambil Thumbnail atau men-*scrape* konten teks asli dari URL (sehingga pengguna dapat membacanya secara offline tanpa iklan), *task* ini dapat di-*offload* ke worker asynchronous.
